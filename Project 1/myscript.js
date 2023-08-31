@@ -9,20 +9,9 @@ function displayTime() {
     var message = document.getElementById('message');
 
 
-    if (hrs >= 12) {
-        session.innerHTML = 'PM';
-    } else {
-        session.innerHTML = 'AM';
-    }
+    
 
-    if (hrs > 12) {
-        hrs = hrs - 12;
-    }
-
-    document.getElementById('hours').innerHTML = hrs;
-    document.getElementById('minutes').innerHTML = min;
-    document.getElementById('seconds').innerHTML = sec;
-
+    
     
     //  Display message according to time
     var messageElement = document.getElementById('breakfast-message');
@@ -104,34 +93,47 @@ function displayTime() {
         // Check if the current time is between 6am and 12pm
         if (hrs >= 6 && hrs < 12) {
             // Change image to Good-morning
-            document.querySelector('.goodmornigimg').src = './wake.jpg';
+            document.querySelector('.goodmornigimg').src ='./wake.png';
         }
     
         // Check if the current time is between 12pm and 4(16)pm
         else if (hrs >= 12 && hrs < 16) {
             // Change image to Good-afternoon
-            document.querySelector('.goodmornigimg').src = './Group.png';
+            document.querySelector('.goodmornigimg').src ='./Group.png';
         }
     
         // Check if the current time is between 4(16)pm and 8(20)pm
         else if (hrs >= 16 && hrs < 20) {
             // Change image to Good-evening
-            document.querySelector('.goodmornigimg').src = './Evening.png';
+            document.querySelector('.goodmornigimg').src ='./Evening.png';
         }
     
     
         // Check if the current time is between 8pm and 11:59pm
         else if (hrs >= 20 && hrs <= 23) {
             // Change image to Good-night
-            document.querySelector('.goodmornigimg').src = './goodnight.png';
+            document.querySelector('.goodmornigimg').src ='./goodnight.png';
         }
     
         // Check if the current time is between 12am and 6am
         else if (hrs >= 0 && hrs < 6) {
             /// Change image to Good-morning
-            document.querySelector('.goodmornigimg').src = './goodnight.png';
+            document.querySelector('.goodmornigimg').src ='./goodnight.png';
+        }
+
+        if (hrs >= 12) {
+            session.innerHTML = 'PM';
+        } else {
+            session.innerHTML = 'AM';
         }
     
-        
+        if (hrs > 12) {
+            hrs = hrs - 12;
+        }
+
+        document.getElementById('hours').innerHTML = hrs;
+        document.getElementById('minutes').innerHTML = min;
+        document.getElementById('seconds').innerHTML = sec;
+
     }
         setInterval(displayTime, 1000);
